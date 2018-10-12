@@ -29,6 +29,8 @@ binaries=(
   neovim
   libidn
   bash-completion
+  fzf
+  diff-so-fancy
 )
 
 echo "installing binaries..."

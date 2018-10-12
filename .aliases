@@ -40,3 +40,7 @@ alias tmux-ssh-ro="tmate display -p '#{tmate_ssh_ro}'"
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cfg=config
+
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+# add support for ctrl+o to open selected file in VS Code
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(subl {})+abort'"

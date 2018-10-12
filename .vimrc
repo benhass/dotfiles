@@ -9,11 +9,11 @@ filetype off                   " required!
   " - For Neovim: ~/.local/share/nvim/plugged
   " - Avoid using standard Vim directory names like 'plugin'
   call plug#begin('~/.vim/plugged')
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'vim-ruby/vim-ruby'
   Plug 'pangloss/vim-javascript'
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-fugitive'
-  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'bmatheny/vim-scala'
   Plug 'airblade/vim-gitgutter'
   Plug 'altercation/vim-colors-solarized'
