@@ -47,6 +47,7 @@ apps=(
   vlc
   adobe-creative-cloud
   steam
+  intellij-idea-ce
 )
 brew cask install --appdir="/Applications" ${apps[@]}
 
