@@ -1,0 +1,20 @@
+# Make vim the default editor
+export EDITOR="vim"
+# Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X"
+# Highlight section titles in manual pages
+export LESS_TERMCAP_md="$ORANGE"
+
+# Larger bash history (allow 32³ entries; default is 500)
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignoredups
+# Make some commands not show up in history
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+export BUNDLER_EDITOR=vim
+
+# Add Qt executables
+export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
+
+
+export PATH="$PATH:/Users/bhass/istio-0.8.0/bin"

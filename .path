@@ -1,0 +1,24 @@
+# PATH additions
+
+PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+PATH="$HOME/bin:$PATH"
+
+# zdi tool
+ZDI_PATH="$HOME/Code/zendesk/docker-images/dockmaster/zdi.sh"
+if [ -f "$ZDI_PATH" ]; then source $ZDI_PATH; fi
+
+# setup autojump
+[[ -s /usr/local/etc/profile.d/autojump.sh ]] && . /usr/local/etc/profile.d/autojump.sh
+
+# setup rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# setup nodenv
+if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
+
+# setup avn
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+# setup hub
+if which hub > /dev/null; then eval "$(hub alias -s)"; fi

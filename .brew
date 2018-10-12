@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# Check for Homebrew,
+# Install if we don't have it
+if test ! $(which brew); then
+  echo "Installing homebrew..."
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+# Update homebrew recipes
+brew update
+
+# Install GNU core utilities (those that come with OS X are outdated)
+brew install coreutils
+
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+brew install findutils
+
+# Install Bash 4
+brew install bash
+
+binaries=(
+  node
+  tmate
+  tmux
+  rbenv
+  ruby-build
+  wget
+  tree
+  hub
+  git
+  reattach-to-user-namespace
+  autojump
+  neovim
+)
+
+echo "installing binaries..."
+brew install ${binaries[@]}
+brew cleanup
+
+# Apps
+apps=(
+  spotify
+  vagrant
+  spectacle
+  iterm2
+  sublime-text
+  virtualbox
+  vlc
+  adobe-creative-cloud
+  steam
+)
+
+echo "installing apps"
+brew cask install --appdir="/Applications" ${apps[@]}
+
+# fonts
+echo "installing fonts"
+fonts=(
+  font-meslo-for-powerline
+)
+brew tap homebrew/cask-fonts
+brew cask install ${fonts[@]}
+

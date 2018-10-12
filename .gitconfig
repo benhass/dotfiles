@@ -1,0 +1,91 @@
+[alias]
+  l = log --abbrev-commit --pretty=oneline -n 20 --graph
+  lg = log --graph --pretty=format:'%Cred%h %Cgreen(%cD) %C(bold blue)<%an> %Creset%s %C(bold yellow)%d%Creset' --abbrev-commit --date-order
+  s = status -s
+  d = !"git diff-index --quiet HEAD -- || clear; git diff --patch-with-stat"
+  p = !"git pull; git submodule foreach git pull origin master"
+  c = clone --recursive
+  ca = !git add -A && git commit -av
+  cm = !git add -A && git commit -avm
+  co = checkout
+  em = !"git s | awk '{print $2}' | xargs nvim"
+
+[apply]
+  # Detect whitespace errors when applying a patch
+  whitespace = fix
+
+[core]
+  # Use custom `.gitignore` and `.gitattributes`
+  excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
+  # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
+  whitespace = space-before-tab,trailing-space
+
+[color]
+  # Use colors in Git commands that are capable of colored output when outputting to the terminal
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[merge]
+  # Include summaries of merged commits in newly created merge commit messages
+  log = true
+	tool = Kaleidoscope
+
+[branch]
+  autosetuprebase = always
+
+# Use `origin` as the default remote on the `master` branch in all cases
+[branch "master"]
+  remote = origin
+  merge = refs/heads/master
+
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[mergetool "sourcetree"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+
+[diff]
+	tool = Kaleidoscope
+
+[credential]
+  helper = osxkeychain
+
+[difftool]
+	prompt = false
+
+# URL shorthands
+[url "git@github.com:"]
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
+[url "git://github.com/"]
+  insteadOf = "github:"
+[url "git@gist.github.com:"]
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
+[url "git://gist.github.com/"]
+  insteadOf = "gist:"
+[push]
+  default = upstream
+[user]
+	name = Ben Hass
+	email = bhass@zendesk.com
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[mergetool]
+	prompt = false
