@@ -4,7 +4,9 @@ export EDITOR="vim"
 export MANPAGER="less -X"
 # Highlight section titles in manual pages
 export LESS_TERMCAP_md="$ORANGE"
-
+# bat theme and syntax config setup
+export BAT_CONFIG_DIR=$HOME/.config/bat
+export BAT_THEME="SolarizedLight"
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
@@ -16,5 +18,5 @@ export BUNDLER_EDITOR=vim
 # Add Qt executables
 export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
 
-
 export PATH="$PATH:/Users/bhass/istio-0.8.0/bin"
+

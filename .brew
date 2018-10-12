@@ -10,16 +10,13 @@ fi
 # Update homebrew recipes
 brew update
 
-# Install GNU core utilities (those that come with OS X are outdated)
-brew install coreutils
-
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-brew install findutils
-
-# Install Bash 4
-brew install bash
-
 binaries=(
+  coreutils
+  findutils
+  bash
+  java
+  sbt
+  bat
   node
   tmate
   tmux
@@ -39,6 +36,7 @@ brew install ${binaries[@]}
 brew cleanup
 
 # Apps
+echo "installing apps"
 apps=(
   spotify
   vagrant
@@ -50,15 +48,13 @@ apps=(
   adobe-creative-cloud
   steam
 )
-
-echo "installing apps"
 brew cask install --appdir="/Applications" ${apps[@]}
 
 # fonts
 echo "installing fonts"
+brew tap homebrew/cask-fonts
 fonts=(
   font-meslo-for-powerline
 )
-brew tap homebrew/cask-fonts
 brew cask install ${fonts[@]}
 
