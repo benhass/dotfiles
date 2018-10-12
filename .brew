@@ -14,8 +14,6 @@ binaries=(
   coreutils
   findutils
   bash
-  java
-  sbt
   bat
   node
   tmate
@@ -29,6 +27,7 @@ binaries=(
   reattach-to-user-namespace
   autojump
   neovim
+  libidn
 )
 
 echo "installing binaries..."
@@ -57,4 +56,8 @@ fonts=(
   font-meslo-for-powerline
 )
 brew cask install ${fonts[@]}
+
+# scala setup
+brew cask install java
+brew install sbt
 
