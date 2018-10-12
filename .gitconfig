@@ -82,8 +82,8 @@
 [push]
   default = upstream
 [user]
-  name = Ben Hass
-  email = bhass@zendesk.com
+	name = Ben Hass
+	email = bhass@zendesk.com
 [mergetool "Kaleidoscope"]
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
   trustexitcode = true
