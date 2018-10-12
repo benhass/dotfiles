@@ -59,6 +59,7 @@ fonts=(
 brew cask install ${fonts[@]}
 
 # scala setup
-brew cask install java
+brew tap caskroom/versions
+brew cask install java8
 brew install sbt
 
