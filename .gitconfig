@@ -40,7 +40,7 @@
 [merge]
   # Include summaries of merged commits in newly created merge commit messages
   log = true
-	tool = Kaleidoscope
+  tool = Kaleidoscope
 
 [branch]
   autosetuprebase = always
@@ -51,20 +51,20 @@
   merge = refs/heads/master
 
 [difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 
 [mergetool "sourcetree"]
   cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
 
 [diff]
-	tool = Kaleidoscope
+  tool = Kaleidoscope
 
 [credential]
   helper = osxkeychain
 
 [difftool]
-	prompt = false
+  prompt = false
 
 # URL shorthands
 [url "git@github.com:"]
@@ -82,10 +82,10 @@
 [push]
   default = upstream
 [user]
-	name = Ben Hass
-	email = bhass@zendesk.com
+  name = Ben Hass
+  email = bhass@zendesk.com
 [mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustexitcode = true
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustexitcode = true
 [mergetool]
-	prompt = false
+  prompt = false
