@@ -33,7 +33,7 @@ set -o vi
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
-
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # setup git autocompletion
 GIT_COMPLETION_SCRIPT="$HOME/.git-completion.bash"

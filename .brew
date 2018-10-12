@@ -28,6 +28,7 @@ binaries=(
   autojump
   neovim
   libidn
+  bash-completion
 )
 
 echo "installing binaries..."

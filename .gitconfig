@@ -89,3 +89,5 @@
   trustexitcode = true
 [mergetool]
   prompt = false
+[hub]
+	protocol = ssh
