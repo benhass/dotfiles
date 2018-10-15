@@ -31,6 +31,8 @@ binaries=(
   bash-completion
   fzf
   diff-so-fancy
+  htop
+  rg
 )
 
 echo "installing binaries..."

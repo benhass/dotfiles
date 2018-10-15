@@ -10,6 +10,7 @@ filetype off                   " required!
   " - Avoid using standard Vim directory names like 'plugin'
   call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
   Plug 'vim-ruby/vim-ruby'
   Plug 'pangloss/vim-javascript'
   Plug 'tpope/vim-rails'
@@ -123,6 +124,13 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-stand
 
 " Ctrl-p index dotfiles
 let g:ctrlp_dotfiles = 1
+
+
+if executable('fzf')
+  nnoremap <silent> <C-t> :FZF -m<cr>
+  nnoremap <silent> <C-p> :FZF -m<cr>
+  nnoremap <silent> <M-p> :Buffers<cr>
+end
 
 " Switch to alternate file
 map <Tab> :bnext<CR>
