@@ -52,6 +52,7 @@ apps=(
   adobe-creative-cloud
   steam
   intellij-idea-ce
+  vnc-server
 )
 brew cask install --appdir="/Applications" ${apps[@]}
 
