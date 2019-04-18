@@ -5,7 +5,7 @@ PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 PATH="$HOME/bin:$PATH"
 
 # zdi tool
-ZDI_PATH="$HOME/Code/zendesk/docker-images/dockmaster/zdi.sh"
+ZDI_PATH="$HOME/Code/zendesk/zdi/dockmaster/zdi.sh"
 if [ -f "$ZDI_PATH" ]; then source $ZDI_PATH; fi
 
 # setup autojump

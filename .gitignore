@@ -1,2 +1,5 @@
 .config/gcloud
 .vim/plugged
+.byebug_history
+.bash_sessions/
+.bash_history

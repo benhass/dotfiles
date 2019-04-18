@@ -19,4 +19,4 @@ export BUNDLER_EDITOR=vim
 export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
 
 export PATH="$PATH:/Users/bhass/istio-0.8.0/bin"
-
+export PATH="$PATH:/Users/bhass/go/bin"
